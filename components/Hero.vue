@@ -1,7 +1,9 @@
 <template>
-	<div class="flex flex-col items-center w-full h-content sm:h-content-sm">
+	<div
+		class="flex flex-col space-y-14 md:space-y-2 items-center w-full h-content sm:h-content-sm"
+	>
 		<h1
-			class="flex sm:my-10 text-center select-none text-6xl sm:text-8.5xl leading-none tracking-tightest font-extrabold"
+			class="flex flex-col sm:my-4 text-center select-none text-6xl sm:text-8.5xl leading-none tracking-tightest font-extrabold"
 		>
 			<span
 				data-content="Dream."
@@ -43,7 +45,7 @@
 				Full stack software Developer at Value Chain Factory
 				<nuxt-link
 					title="contact"
-					class="font-medium leading-6"
+					class="font-medium leading-6 text-"
 					aria-label="Link to contact"
 					to="/contact"
 				>
