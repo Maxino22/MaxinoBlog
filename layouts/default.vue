@@ -1,10 +1,12 @@
 <template>
-	<div>
+	<div class="bg-white dark:bg-black">
 		<Header />
-		<div className="flex flex-col justify-between min-h-screen">
-			<main>
-				<slot />
-			</main>
+		<div>
+			<div class="flex flex-col min-h-screen">
+				<main>
+					<slot />
+				</main>
+			</div>
 		</div>
 	</div>
 </template>

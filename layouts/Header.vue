@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="relative">
 		<header
 			class="w-full sticky z-20 flex items-center justify-between py-4 bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 backdrop-filter backdrop-saturate-150 backdrop-blur-lg firefox:bg-opacity-100 dark:firefox:bg-opacity-100"
 		>
@@ -7,7 +7,7 @@
 				class="flex items-center justify-between w-full max-w-2xl px-4 mx-auto sm:px-6 xl:max-w-3xl xl:px-0"
 			>
 				<div class="flex items-center text-base leading-5">
-					<div class="hidden sm:block sm:space-x-8">
+					<div class="hidden sm:block sm:space-x-7">
 						<nuxt-link
 							v-for="link in navLinks"
 							:key="link.title"
@@ -29,7 +29,7 @@
 		</header>
 		<!-- mobile menu -->
 		<div
-			class="sm:hidden flexed w-full h-screen right-0 bg-white dark:bg-black z-20 transform ease-in-out duration-500backdrop-filter bg-opacity-30 dark:bg-opacity-30 backdrop-saturate-150 backdrop-blur-lg firefox:bg-opacity-100 dark:firefox:bg-opacity-100"
+			class="sm:hidden fixed w-full h-screen right-0 bg-white dark:bg-black z-20 transform ease-in-out duration-500 backdrop-filter bg-opacity-30 dark:bg-opacity-30 backdrop-saturate-150 backdrop-blur-lg firefox:bg-opacity-100 dark:firefox:bg-opacity-100"
 			:class="{
 				'translate-x-0': openMenuButton,
 				'-translate-x-full': !openMenuButton,
@@ -77,6 +77,10 @@ const navLinks = [
 	{
 		link: '/projects',
 		title: 'Projects',
+	},
+	{
+		link: '/endorsements',
+		title: 'Endorsements',
 	},
 	{
 		link: '/uses',
