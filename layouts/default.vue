@@ -1,13 +1,13 @@
 <template>
 	<div class="bg-white dark:bg-black">
 		<Header />
-		<div>
+		<SectionContainer>
 			<div class="flex flex-col min-h-screen">
 				<main>
 					<slot />
 				</main>
 			</div>
-		</div>
+		</SectionContainer>
 	</div>
 </template>
 
