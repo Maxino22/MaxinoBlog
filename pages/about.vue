@@ -78,7 +78,6 @@
 
 <script setup lang="ts">
 import markdown from 'markdown-it'
+
 const story = await useAsyncStoryblok('about', { version: 'draft' })
 </script>
-
-<style scoped></style>
