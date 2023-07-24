@@ -9,6 +9,7 @@ export default defineNuxtConfig({
 		'@nuxt/content',
 		'@storyblok/nuxt',
 		'@vueuse/nuxt',
+		'@pinia/nuxt',
 	],
 	storyblok: {
 		accessToken: process.env.STORYBLOK_TOKEN,

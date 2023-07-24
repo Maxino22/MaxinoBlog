@@ -1,14 +1,122 @@
 <template>
 	<main>
-		<external-card class="w-1/2">
-			<nuxt-img
-				src="https://www.thvu.dev/_next/image?url=https%3A%2F%2Fwww.datocms-assets.com%2F55167%2F1636557587-lineblockchainmain.png&w=640&q=75"
-				class="object-cover z-44 object-center border-b border-solid lg:h-48 md:h-36"
-			/>
-		</external-card>
+		<div class="pt-6 pb-8 space-y-2 md:space-y-5">
+			<page-title>Projects</page-title>
+		</div>
+
+		<h2
+			class="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9"
+		>
+			Open Source
+		</h2>
+		<p class="text-lg leading-7 text-gray-500 dark:text-gray-400 xl:text-xl">
+			My journey in open sources starts with
+		</p>
+		<div class="container py-12">
+			<div class="flex flex-wrap -m-4">
+				<ExternalCard
+					v-for="project in store.openSourceProjects"
+					:title="project.title"
+					:image="project.image"
+					:description="project.description"
+					:link="project.link"
+					:key="project.title"
+				/>
+			</div>
+		</div>
+
+		<h2
+			class="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9"
+		>
+			Products
+		</h2>
+		<p class="text-lg leading-7 text-gray-500 dark:text-gray-400 xl:text-xl">
+			Sass Products I have helped launch
+		</p>
+		<div class="container py-12">
+			<div class="flex flex-wrap -m-4">
+				<ExternalCard
+					v-for="project in store.productProjects"
+					:title="project.title"
+					:image="project.image"
+					:description="project.description"
+					:link="project.link"
+					:key="project.title"
+				/>
+			</div>
+		</div>
+		<h2
+			class="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9"
+		>
+			Web Development
+		</h2>
+		<p class="text-lg leading-7 text-gray-500 dark:text-gray-400 xl:text-xl">
+			Web Dev clients i have worked with 💚
+		</p>
+		<div class="container py-12">
+			<div class="flex flex-wrap -m-4">
+				<ExternalCard
+					v-for="project in store.webDevelopmentProjects"
+					:title="project.title"
+					:image="project.image"
+					:description="project.description"
+					:link="project.link"
+					:key="project.title"
+				/>
+			</div>
+		</div>
+
+		<h2
+			class="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9"
+		>
+			Hobby projects
+		</h2>
+		<p class="text-lg leading-7 text-gray-500 dark:text-gray-400 xl:text-xl">
+			Projects I built for my hobbies or personal needs
+		</p>
+		<div class="container py-12">
+			<div class="flex flex-wrap -m-4">
+				<ExternalCard
+					v-for="project in store.hobbyProjects"
+					:title="project.title"
+					:image="project.image"
+					:description="project.description"
+					:link="project.link"
+					:key="project.title"
+				/>
+			</div>
+		</div>
 	</main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useProjectStore } from '~/store/ProjectsStore'
+import ProjectType from 'types/projectsType'
+
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get('cdn/stories', {
+	version: 'draft',
+	starts_with: 'projects',
+	is_startpage: 0,
+})
+const store = useProjectStore()
+const projectsArray: ProjectType[] = []
+
+for (const project of data.stories) {
+	const { content } = project
+	const ProjectData: ProjectType = {
+		title: content.title,
+		link: content.url.url,
+		image: content.Image.filename,
+		description: content.description,
+		category: content.category,
+	}
+
+	projectsArray.push(ProjectData)
+	store.addProject(projectsArray)
+}
+
+console.log(projectsArray)
+</script>
 
 <style scoped></style>
