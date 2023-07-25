@@ -3,10 +3,9 @@
 		<Header />
 		<SectionContainer>
 			<div class="flex flex-col min-h-screen">
-				<main>
-					<slot />
-				</main>
+				<slot />
 			</div>
+			<Footer />
 		</SectionContainer>
 	</div>
 </template>

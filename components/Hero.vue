@@ -1,9 +1,9 @@
 <template>
 	<div
-		class="flex flex-col space-y-14 md:space-y-2 items-center w-full h-content sm:h-content-sm"
+		class="flex flex-col justify-around items-center w-full h-content sm:h-content-sm"
 	>
 		<h1
-			class="flex flex-col sm:my-4 text-center select-none text-6xl sm:text-8.5xl leading-none tracking-tightest font-extrabold"
+			class="flex flex-col lg:flex-row sm:my-4 text-center select-none text-7xl sm:text-8.5xl leading-none tracking-tightest font-extrabold"
 		>
 			<span
 				data-content="Dream."
@@ -36,13 +36,14 @@
 				</span>
 			</span>
 		</h1>
-		<div class="space-y-2 md:space-y-5">
+		<div class="space-y-2 md:space-y-5 px-5 sm:px-0">
 			<page-title>
 				Hi There I'm Maxwell
 				<span role="img" aria-label="waving hand" class="wave"> 👋🏾 </span>
 			</page-title>
 			<p>
-				Full stack software Developer at Value Chain Factory
+				full stack developer with a strong passion in web and Open Source
+				technology
 				<nuxt-link
 					title="contact"
 					class="font-medium leading-6 text-"

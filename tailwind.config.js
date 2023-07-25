@@ -32,8 +32,8 @@ module.exports = {
 				// https://coolors.co/2d00f7-6a00f4-8900f2-a100f2-b100e8-bc00dd-d100d1-db00b6-e500a4-f20089
 				'gradient-1-start': '#66bb6a',
 				'gradient-1-end': '#26a69a',
-				'gradient-2-start': '#26a69a',
-				'gradient-2-end': '#407C9F',
+				'gradient-2-start': '#ff4d4d',
+				'gradient-2-end': '#f9cb28',
 				'gradient-3-start': '#A100F2',
 				'gradient-3-end': '#2D00F7',
 			},
