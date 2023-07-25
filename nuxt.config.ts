@@ -11,6 +11,12 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'@pinia/nuxt',
 	],
+
+	runtimeConfig: {
+		mailerUser: '',
+		mailerPass: '',
+		mailerLog: '',
+	},
 	storyblok: {
 		accessToken: process.env.STORYBLOK_TOKEN,
 	},
