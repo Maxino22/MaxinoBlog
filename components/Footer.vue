@@ -1,6 +1,6 @@
 <template>
 	<div class="w-full text-sm text-black dark:text-white pb-8">
-		<span>&copy; {{ useDateFormat(useNow(), 'YYYY').value }} </span>
+		<span>&copy; {{ new Date().getFullYear() }} </span>
 		<span class="text-black dark:text-white">
 			Made with 💚 in Nairobi,
 			<Icon name="flagpack:ke" />
