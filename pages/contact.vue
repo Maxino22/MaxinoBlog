@@ -1,5 +1,5 @@
 <template>
-	<div>Contact</div>
+	<ContactModal />
 </template>
 
 <script setup lang="ts"></script>

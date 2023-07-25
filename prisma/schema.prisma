@@ -9,7 +9,7 @@ datasource db {
   provider = "postgresql"
   url      = env("POSTGRES_PRISMA_URL")
   directUrl = env("POSTGRES_URL_NON_POOLING")
-  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
+  shadowDatabaseUrl = env("NEON_SHADOW_URL")
 
 }
 
@@ -103,4 +103,16 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map(name: "verification_tokens")
+}
+
+model Contact {
+  id Int @id @default(autoincrement())
+  first_name String
+  last_name String
+  email String
+  proposal String
+  company String
+  job_title String
+  message String @db.Text
+  timeIn DateTime @default(now())
 }
