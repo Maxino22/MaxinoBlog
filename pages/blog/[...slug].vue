@@ -1,5 +1,5 @@
 <template>
-	<div>Blog</div>
+	<div>single blog</div>
 </template>
 
 <script setup lang="ts"></script>
