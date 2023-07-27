@@ -92,8 +92,8 @@ const navLinks = [
 		title: 'Projects',
 	},
 	{
-		link: '/endorsements',
-		title: 'Endorsements',
+		link: '/games',
+		title: 'Games🎮',
 	},
 	{
 		link: '/uses',

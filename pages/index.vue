@@ -10,12 +10,12 @@
 		<div
 			class="py-8 grid grid-cols-1 grid-rows-2 grid-flow-row sm:grid-rows-1 sm:grid-cols-2 xl:grid-cols-2 justify-between gap-4"
 		>
-			<internal-card link="/endorsements" title="Endorsements">
+			<internal-card link="/games" title="Games">
 				<Icon
 					class="text-black dark:text-white"
-					name="solar:medal-ribbon-star-bold-duotone"
+					name="solar:gamepad-minimalistic-bold-duotone"
 				/>
-				23 Endorsements
+				2 Games
 			</internal-card>
 			<internal-card link="/projects" title="Projects">
 				<Icon
