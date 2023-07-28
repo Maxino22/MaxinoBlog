@@ -6,10 +6,13 @@
 		</p>
 
 		<div class="my-3 flex space-x-3 items-center">
-			<div class="flex flex-col space-y-2 cursor-pointer">
+			<nuxt-link
+				to="/games/snake"
+				class="flex flex-col space-y-2 cursor-pointer"
+			>
 				<nuxt-img class="h-20 w-20" src="../public/images/snake.png"></nuxt-img>
 				<p class="text-center font-semibold">Snake</p>
-			</div>
+			</nuxt-link>
 		</div>
 	</main>
 </template>
