@@ -1,6 +1,10 @@
 <template>
+	<div class="sm:hidden mt-24 text-center">
+		<page-title>Games are only available on larger screens</page-title>
+	</div>
+
 	<div
-		class="hidden xl:block relative w-full bg-secondaryGreen rounded-lg shadow-lg shadow-accentGreen border max-h-[90%] lg:max-h-[90%] my-12 border-lines"
+		class="hidden md:block relative w-full bg-secondaryGreen rounded-lg shadow-lg shadow-accentGreen border max-h-[90%] lg:max-h-[90%] my-12 border-lines"
 	>
 		<div class="grid grid-cols-5 gap-4 space-x-4 p-10">
 			<GameContainer v-on:update:score="updateScore" class="col-span-3" />
