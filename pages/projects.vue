@@ -95,6 +95,10 @@ import { useProjectStore } from '~/store/ProjectsStore'
 getProjects()
 
 const store = useProjectStore()
+
+useSeoMeta({
+	description: 'CSome Projects I have worked on',
+})
 </script>
 
 <style scoped></style>

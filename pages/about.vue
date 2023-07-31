@@ -80,4 +80,8 @@
 import markdown from 'markdown-it'
 
 const story = await useAsyncStoryblok('about', { version: 'draft' })
+
+useSeoMeta({
+	description: 'About Me, This Website & Journey as a Developer',
+})
 </script>

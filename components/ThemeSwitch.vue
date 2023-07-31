@@ -1,18 +1,33 @@
 <template>
-	<div @click="toggleTheme" class="cursor-pointer flex items-center w-12 h-6">
+	<div class="flex items-center space-x-1">
+		<div @click="toggleTheme" class="cursor-pointer flex items-center w-12 h-6">
+			<Icon
+				size="20"
+				v-if="colorMode.preference == 'dark' || 'system'"
+				class="text-white"
+				name="solar:sun-2-bold"
+			/>
+			<Icon
+				size="20"
+				v-if="colorMode.preference == 'light' || 'system'"
+				class="text-black"
+				name="solar:moon-bold"
+			/>
+		</div>
 		<Icon
+			@click="colorMode.preference = 'system'"
 			size="20"
-			v-if="colorMode.preference == 'dark'"
-			class="text-white"
-			name="solar:sun-2-bold"
+			v-if="colorMode.preference == 'light' || 'system'"
+			:class="colorMode.preference == 'dark' ? 'text-white' : 'text-gray-900'"
+			name="solar:monitor-bold-duotone"
 		/>
-		<Icon size="20" v-else class="text-black" name="solar:moon-bold" />
 	</div>
 </template>
 
 <script setup>
 const colorMode = useColorMode()
 
+console.log(colorMode.preference)
 const toggleTheme = () => {
 	if (colorMode.preference == 'dark') {
 		// Logic to enable dark theme

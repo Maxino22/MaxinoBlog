@@ -34,4 +34,32 @@ import { useProjectStore } from '~/store/ProjectsStore'
 getProjects()
 
 const store = useProjectStore()
+
+useSchemaOrg([
+	definePerson({
+		name: 'Maxwell Muhanda',
+		sameAs: [
+			'https://github.com/Maxino22',
+			'https://twitter.com/MaxwellMuhanda',
+			'https://www.linkedin.com/in/maxwell-muhanda-5563b316b/',
+		],
+	}),
+
+	defineWebSite({
+		url: 'https://www.maxino.dev',
+		name: 'Maxwell Muhanda | Portfolio',
+		inLanguage: 'en-US',
+	}),
+])
+
+useSeoMeta({
+	description: 'Portfolio Website, Digital Home & Blog',
+	ogUrl: `https://drunkenape.africa/`,
+	ogTitle: 'Maxwell Muhanda 🐱‍👤',
+	ogImage: '/images/maxino.png',
+	twitterCard: 'summary_large_image',
+	twitterTitle: 'Maxwell Muhanda 🐱‍👤',
+	twitterDescription: 'Portfolio Website, Digital Home & Blog',
+	twitterImage: '/images/maxino.png',
+})
 </script>
