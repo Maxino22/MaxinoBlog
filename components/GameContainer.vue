@@ -2,8 +2,8 @@
 	<div class="text-center">
 		<canvas
 			ref="gameBoard"
-			height="550"
 			width="400"
+			height="500"
 			class="w-full border rounded-lg border-black"
 		>
 		</canvas>

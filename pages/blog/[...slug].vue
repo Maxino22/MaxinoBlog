@@ -2,7 +2,12 @@
 	<main>
 		<Head>
 			<Meta name="description" :content="data?.description" />
-			<Meta name="" />
+			<Meta name="og:image" :content="`/images/blog/${data?.cover}`" />
+			<Meta name="og:image:width" content="1200" />
+			<Meta name="og:image:height" content="630" />
+			<Meta name="twitter:card" content="summary_large_image" />
+			<Meta name="twitter:title" :content="data?.title" />
+			<Meta name="twitter:description" :content="data?.description" />
 		</Head>
 		<div class="flex items-center space-x-3">
 			<div
