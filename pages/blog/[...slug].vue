@@ -1,5 +1,9 @@
 <template>
 	<main>
+		<Head>
+			<Meta name="description" :content="data?.description" />
+			<Meta name="" />
+		</Head>
 		<div class="flex items-center space-x-3">
 			<div
 				class="bg-gray-200 dark:bg-gray-800 rounded-md flex items-center justify-center h-8 w-8 p-2"
@@ -24,19 +28,55 @@
 				name="solar:alt-arrow-right-linear"
 			/>
 
-			<nuxt-link>This is the title</nuxt-link>
+			<nuxt-link :to="data?._path">{{ data?.title }}</nuxt-link>
 		</div>
 		<article>
 			<div class="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
 				<header class="">
-					<p class="my-5">Last updated on June 6 , 2022</p>
-					<page-title>This is the blog title</page-title>
+					<p class="my-5">Last updated on {{ data?.date }}</p>
+					<page-title>{{ data?.title }}</page-title>
 				</header>
+				<nuxt-img
+					alt=""
+					:src="`/images/blog/${data?.cover}`"
+					class="rounded-lg object-cover w-full my-8 h-72 xl:h-96"
+				></nuxt-img>
+				<div class="flex justify-center mt-5 mx-auto">
+					<ContentRenderer :value="data" class="prose my-10" />
+				</div>
 			</div>
 		</article>
 	</main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
 
-<style scoped></style>
+const { path } = useRoute()
+const { data } = await useAsyncData(`content-${path}`, () => {
+	return queryContent<ParsedContent>().where({ _path: path }).findOne()
+})
+
+// const script = {
+// 	src: 'https://utteranc.es/client.js',
+// 	repo: 'https://github.com/Maxino22/MaxinoBlog',
+// 	'issue-term': 'pathname',
+// 	label: 'Comments',
+// 	theme: 'preferred-color-scheme',
+// 	crossorigin: 'anonymous',
+// 	async: true,
+// 	tagPosition: 'bodyClose',
+// }
+
+// useHead({
+// 	script: [script],
+// })
+</script>
+
+<style scoped>
+.utterances {
+	width: 100%;
+	margin: 0 !important;
+	max-width: 100%;
+}
+</style>
