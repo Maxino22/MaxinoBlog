@@ -29,7 +29,10 @@
 		"@headlessui/vue": "^1.7.14",
 		"@pinia/nuxt": "^0.4.11",
 		"@storyblok/nuxt": "^5.5.2",
+		"firebase": "^10.1.0",
 		"markdown-it": "^13.0.1",
-		"pinia": "^2.1.4"
+		"nuxt-vuefire": "^0.2.13",
+		"pinia": "^2.1.4",
+		"vuefire": "^3.1.13"
 	}
 }

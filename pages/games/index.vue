@@ -1,4 +1,5 @@
 <template>
+	<SignInModal />
 	<main>
 		<page-title>Play Games</page-title>
 		<p class="text-lg leading-7 text-gray-500 dark:text-gray-400 xl:text-xl">
@@ -14,6 +15,7 @@
 				<p class="text-center font-semibold">Snake</p>
 			</nuxt-link>
 		</div>
+		<LoginView />
 	</main>
 </template>
 
